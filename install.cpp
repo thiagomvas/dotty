@@ -100,7 +100,6 @@ void symlink_configs(const fs::path& configRoot, const fs::path& home, bool test
                 fs::create_directories(home_path.parent_path()); // Ensure the parent directory exists
 
                 try {
-
                     if (fs::exists(home_path)) {
                         // If it exists, create a backup by renaming it with .bak extension
                         fs::path backup_path = home_path;
@@ -109,7 +108,7 @@ void symlink_configs(const fs::path& configRoot, const fs::path& home, bool test
                         // Rename the existing file or symlink to a backup
                         fs::rename(home_path, backup_path);
                         info("Backed up existing file or symlink to: " + backup_path.string());
-                    }c
+                    }
                     fs::create_symlink(entry.path(), home_path); // Create symlink for the file
                     success("Created symlink file: " + entry.path().string() + " → " + home_path.string());
                 } catch (const std::exception& e) {

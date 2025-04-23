@@ -138,5 +138,6 @@ int main() {
     // Inform what the scrips folder is
     info("The 'scripts/' folder contains post-install commands and other shell scripts that are ran after the program is installed.");
 
+    success("Setup completed successfully!");
     return 0;
 }
