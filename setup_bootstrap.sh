@@ -6,6 +6,12 @@ then
     exit 1
 fi
 
+if [ -d ".git" ]; then
+    echo "Removing existing .git directory..."
+    rm -rf .git
+    echo ".git directory removed."
+fi
+
 if [ ! -d "build" ]; then
     mkdir build
 fi
