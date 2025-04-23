@@ -149,7 +149,7 @@ int main(int argc, char *argv[]) {
 
     // Set root path and home path
     auto root = fs::current_path();
-    auto home = fs::path(getenv("HOME")) / "config-test";
+    auto home = fs::path(getenv("HOME"));
 
     // Path to the .packages file
     fs::path packages_file = root / ".packages";
